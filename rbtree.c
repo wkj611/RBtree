@@ -11,6 +11,7 @@ link NODE(int key,link l,link r,int cl){
     link root = malloc(sizeof(struct node));
     root->l = l;
     root->r = r;
+    root->key = key;
     root->cl = cl;
     return root;
     
@@ -28,7 +29,7 @@ link rotL(link root){
     x->l = root;
     x->cl = root->cl;
     root->cl = 1;
-    return root;
+    return x;
 }
 link rotR(link root){
     link x = root->l;
@@ -36,7 +37,7 @@ link rotR(link root){
     x->r = root;
     x->cl = root->cl;
     root->cl = 1;
-    return root;
+    return x;
 }
 link  changecl(link root){
     root->l->cl = 0;
