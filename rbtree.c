@@ -66,11 +66,13 @@ link RB_insert(link root,int key){
 }
 
 void RB_display(link root){
+    printf("(");
     if(root!=null){
+        printf("%d%c",root->key,root->cl?'+':' ');
         RB_display(root->l);
-        printf("%d  ",root->key);
         RB_display(root->r);
     }
+    printf(")");
 }
 #define N 16
 void main(){
